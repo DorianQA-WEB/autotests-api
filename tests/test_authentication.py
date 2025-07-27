@@ -10,7 +10,8 @@ import pytest
 
 from tools.assertions.schema import validate_json_schema
 
-
+@pytest.mark.authentication
+@pytest.mark.regression
 def test_login():
     public_user_client = get_public_users_client()
     authentication_client = get_authentication_client()
