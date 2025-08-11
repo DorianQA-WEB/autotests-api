@@ -1,5 +1,3 @@
-from typing import TypedDict
-
 from httpx import Response
 from clients.files.file_schema import CreateFileResponseSchema, CreateFileRequestSchema
 from clients.api_client import APIClient

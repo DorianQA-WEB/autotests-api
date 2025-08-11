@@ -17,16 +17,23 @@ class CourseSchema(BaseModel):
     max_score: int =Field(alias="maxScore")
     min_score: int =Field(alias="minScore")
     description: str
-    previewFile: FileSchema  # Вложенная структура файла
+    preview_file: FileSchema = Field(alias="previewFile") # Вложенная структура файла
     estimated_time: str =Field(alias="estimatedTime")
-    createdByUser: UserSchema # Вложенная структура пользователя
+    created_by_user: UserSchema = Field(alias="createdByUser")# Вложенная структура пользователя
 
 
 class GetCoursesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка курсов.
     """
-    userId: str
+    user_id: str = Field(alias="userId")
+
+
+class GetCoursesResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка курсов.
+    """
+    courses: list[CourseSchema]
 
 
 class CreateCourseRequestSchema(BaseModel):
@@ -65,3 +72,10 @@ class UpdateCourseRequestSchema(BaseModel):
     min_score: int | None = Field(alias="minScore", default_factory=fake.min_score)
     description: str | None = Field(default_factory=fake.text)
     estimated_time: str | None = Field(alias="estimatedTime", default_factory=fake.text)
+
+
+class UpdateCourseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на обновление курса.
+    """
+    course: CourseSchema 
