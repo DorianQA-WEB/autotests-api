@@ -14,11 +14,11 @@ class CourseSchema(BaseModel):
 
     id: str
     title: str
-    max_score: int =Field(alias="maxScore")
-    min_score: int =Field(alias="minScore")
+    max_score: int = Field(alias="maxScore")
+    min_score: int = Field(alias="minScore")
     description: str
     preview_file: FileSchema = Field(alias="previewFile") # Вложенная структура файла
-    estimated_time: str =Field(alias="estimatedTime")
+    estimated_time: str = Field(alias="estimatedTime")
     created_by_user: UserSchema = Field(alias="createdByUser")# Вложенная структура пользователя
 
 
