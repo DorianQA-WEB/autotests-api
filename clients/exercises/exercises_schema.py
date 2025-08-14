@@ -24,9 +24,9 @@ class GetExercisesQuerySchema(BaseModel):
 
 class GetExercisesResponseSchema(BaseModel):
     """
-    Описание структуры ответа на получение списка заданий.
+    Описание структуры ответа на получение задания.
     """
-    exercises: list[ExercisesSchema]
+    exercises: ExercisesSchema
 
 
 
@@ -67,3 +67,10 @@ class UpdateExerciseRequestSchema(BaseModel):
     order_index: int | None = Field(alias='orderIndex', default_factory=fake.integer)
     description: str | None = Field(default_factory=fake.text)
     estimated_time: str | None =Field(alias="estimatedTime", default_factory=fake.estimated_time)
+
+
+class UpdateExerciseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на обновление задания.
+    """
+    exercise: ExercisesSchema
