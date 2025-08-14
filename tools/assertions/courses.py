@@ -31,7 +31,7 @@ def assert_course(
     Проверяет, что фактические данные курса соответствуют ожидаемым.
 
     :param actual: Фактические данные курса.
-    :param expected: Ожидаемые данные курса.
+    :param expected: Оqжидаемые данные курса.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
     assert_equal(actual.id, expected.id, "id")

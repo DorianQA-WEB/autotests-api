@@ -22,6 +22,13 @@ class GetExercisesQuerySchema(BaseModel):
     """
     course_id: str =Field(alias="courseId")
 
+class GetExercisesResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка заданий.
+    """
+    exercises: list[ExercisesSchema]
+
+
 
 class CreateExerciseRequestSchema(BaseModel):
     """
