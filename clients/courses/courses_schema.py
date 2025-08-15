@@ -33,7 +33,7 @@ class GetCoursesResponseSchema(BaseModel):
     """
     Описание структуры ответа на получение списка курсов.
     """
-    courses: list[CourseSchema]
+    course: list[CourseSchema]
 
 
 class CreateCourseRequestSchema(BaseModel):

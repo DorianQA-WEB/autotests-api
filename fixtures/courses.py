@@ -24,8 +24,8 @@ def function_course(
         function_files: FileFixture
 ) -> CourseFixture:
     request = CreateCourseRequestSchema(
-        create_by_user_id=function_user.response.user.id,
-        preview_file_id=function_files.response.file.id
+        preview_file_id=function_files.response.file.id,
+        created_by_user_id=function_user.response.user.id
 )
     response = courses_client.create_course(request)
     return CourseFixture(request=request, response=response)
