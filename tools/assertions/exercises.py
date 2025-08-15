@@ -91,3 +91,19 @@ def assert_exercise_not_found_response(actual: InternalErrorResponseSchema):
     expected = InternalErrorResponseSchema(detail="Exercise not found")
     assert_internal_error_response(actual, expected)
 
+
+def assert_get_exercises_response(
+        get_exercises_response: GetExercisesResponseSchema,
+        create_exercises_responses: list[CreateExerciseResponseSchema]
+):
+    """
+    Проверяет, что ответ на получение списка заданий соответствует ответам на их создание.
+
+    :param get_exercises_response: Ответ API при запросе списка задания.
+    :param create_exercises_responses: Список API ответов при создании задания.
+    :raises AssertionError: Если данные задания не совпадают.
+    """
+    assert_length(get_exercises_response.exercises, create_exercises_responses, "exercises")
+
+    for index, create_exercises_responses in enumerate(create_exercises_responses):
+        assert_exercise(get_exercises_response.courses[index], create_exercises_responses.course)

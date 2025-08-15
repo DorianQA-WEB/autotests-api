@@ -26,7 +26,7 @@ class GetExercisesResponseSchema(BaseModel):
     """
     Описание структуры ответа на получение задания.
     """
-    exercises: ExercisesSchema
+    exercises: list[ExercisesSchema]
 
 
 
