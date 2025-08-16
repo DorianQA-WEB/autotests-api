@@ -106,4 +106,4 @@ def assert_get_exercises_response(
     assert_length(get_exercises_response.exercises, create_exercises_responses, "exercises")
 
     for index, create_exercises_responses in enumerate(create_exercises_responses):
-        assert_exercise(get_exercises_response.courses[index], create_exercises_responses.course)
+        assert_exercise(get_exercises_response.exercises[index], create_exercises_responses.exercise)
