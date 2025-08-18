@@ -3,11 +3,13 @@ from clients.files.file_schema import CreateFileRequestSchema, CreateFileRespons
 from tools.assertions.base import assert_equal
 from tools.assertions.errors import assert_validation_error, assert_validation_error_response
 import allure
+from config import settings
 
 
 @allure.step("Check create file response")
 def assert_create_file_response(request: CreateFileRequestSchema, response: CreateFileResponseSchema):
-     expected_url = f"http://localhost:8000/static/{request.directory}/{request.filename}"
+     expected_url = f"{settings.http_client.client_url}static/{request.directory}/{request.filename}"
+
      assert_equal(str(response.file.url), expected_url, "url")
      assert_equal(response.file.filename, request.filename, "filename")
      assert_equal(response.file.directory, request.directory, "directory")
