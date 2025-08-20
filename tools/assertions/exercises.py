@@ -5,6 +5,9 @@ from clients.exercises.exercises_schema import CreateExerciseRequestSchema, Crea
 from tools.assertions.base import assert_equal, assert_length
 from tools.assertions.errors import assert_internal_error_response
 import allure
+from tools.logger import get_logger
+
+logger = get_logger("ERRORS_ASSERTIONS")
 
 @allure.step("Check create exercise response")
 def assert_create_exercise_response(
@@ -18,6 +21,8 @@ def assert_create_exercise_response(
     :param response: Ответ API с данными задания.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
+    logger.info("Check create exercise response")
+
     assert_equal(response.exercise.title, request.title, "title")
     assert_equal(response.exercise.course_id, request.course_id, "course_id")
     assert_equal(response.exercise.max_score, request.max_score, "max_score")
@@ -37,6 +42,7 @@ def assert_exercise(
     :param expected: Ожидаемые данные задания.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
+    logger.info("Check exercise")
 
     assert_equal(actual.id, expected.id, "id")
     assert_equal(actual.title, expected.title, "title")
@@ -59,6 +65,8 @@ def assert_get_exercise_response(
     :param create_exercise_response: Ответ API при создании задания.
     :raises AssertionError: Если данные задания не совпадают.
     """
+    logger.info("Check get exercise response")
+
     assert_exercise(get_exercise_response.exercise, create_exercise_response.exercise)
 
 @allure.step("Check update exercise response")
@@ -73,6 +81,8 @@ def assert_update_exercise_response(
     :param response: Ожидаемые данные задания.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
+    logger.info("Check update exercise response")
+
     assert_equal(request.title, response.title, "title")
     assert_equal(request.course_id, response.course_id, "course_id")
     assert_equal(request.min_score, response.min_score, "min_score")
@@ -89,6 +99,8 @@ def assert_exercise_not_found_response(actual: InternalErrorResponseSchema):
     :param actual: Фактический ответ.
     :raises AssertionError: Если фактический ответ не соответствует ошибке "Exercise not found"
     """
+    logger.info("Check exercise not found response")
+
     expected = InternalErrorResponseSchema(detail="Exercise not found")
     assert_internal_error_response(actual, expected)
 
@@ -104,6 +116,8 @@ def assert_get_exercises_response(
     :param create_exercises_responses: Список API ответов при создании задания.
     :raises AssertionError: Если данные задания не совпадают.
     """
+    logger.info("Check get exercises response")
+
     assert_length(get_exercises_response.exercises, create_exercises_responses, "exercises")
 
     for index, create_exercises_responses in enumerate(create_exercises_responses):
