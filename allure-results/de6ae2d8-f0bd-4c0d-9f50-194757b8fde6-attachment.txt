@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ 'http://localhost:8000/api/v1/courses' \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTA4LTIxVDEzOjQ1OjMyLjIwNzY4MSIsInVzZXJfaWQiOiJkNmVlMDc1Ny1hM2YxLTRiYTMtODJlNi04MzhhYTk5MzUyOTQifQ.8oixnqyAAWIoS_ZDM5zuGegkkt2FxBIdvG9BfK54Qpo' \
+ -H 'content-length: 370' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Purpose during both listen.","maxScore":90,"minScore":6,"description":"Weight activity page. Compare knowledge only never.\nQuickly officer type especially everyone car. Especially work painting baby usually enter there.","estimatedTime":"7 weeks","previewFileId":"428e0d67-c56e-47ab-bdd6-d494ffbd3fcd","createdByUserId":"d6ee0757-a3f1-4ba3-82e6-838aa9935294"}'

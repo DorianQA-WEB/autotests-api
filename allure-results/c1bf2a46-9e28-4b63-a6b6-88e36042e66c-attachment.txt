@@ -1,0 +1,13 @@
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:29 Make POST request to http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:29 Make POST request to http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:29 Make POST request to http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:29 Make DELETE request to http://localhost:8000/api/v1/files/afce5262-84aa-42e8-bf40-9f0a3f22e06e
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/files/afce5262-84aa-42e8-bf40-9f0a3f22e06e
+[32mINFO    [0m BASE_ASSERTIONS:base.py:35 Check that response status code equals to 200
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:29 Make GET request to http://localhost:8000/api/v1/files/afce5262-84aa-42e8-bf40-9f0a3f22e06e
+[32mINFO    [0m HTTP_LOGER:event_hooks.py:38 Got response 404 Not Found from http://localhost:8000/api/v1/files/afce5262-84aa-42e8-bf40-9f0a3f22e06e
+[32mINFO    [0m BASE_ASSERTIONS:base.py:35 Check that response status code equals to 404
+[32mINFO    [0m EXERCISES_ASSSERTIONS:files.py:116 Check file not found response

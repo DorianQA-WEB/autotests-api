@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ 'http://localhost:8000/api/v1/courses' \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTA4LTIxVDEzOjQ1OjMzLjIyNjQ0NCIsInVzZXJfaWQiOiJkZjU1N2FhZi0zNDkyLTQ2OTEtYmY3My0zMTMyYzdhNTk1Y2MifQ.y56DktTYaAH4CC1RXf6O5e5FWTMtygO_KiY0FHK_dsE' \
+ -H 'content-length: 366' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Play likely medical writer any ten.","maxScore":59,"minScore":29,"description":"Result sport food city someone. Somebody would building prove.\nGive only position east off now. Dog become mean develop site only wear.","estimatedTime":"4 weeks","previewFileId":"3d04a814-416a-4771-b1f0-c84ec1a44b15","createdByUserId":"df557aaf-3492-4691-bf73-3132c7a595cc"}'
