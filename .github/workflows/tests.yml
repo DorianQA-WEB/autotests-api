@@ -63,7 +63,7 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub  Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
