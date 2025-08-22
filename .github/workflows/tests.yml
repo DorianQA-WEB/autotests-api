@@ -65,7 +65,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: always()
-        run: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
