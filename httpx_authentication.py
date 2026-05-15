@@ -2,12 +2,13 @@ import httpx  # Импортируем библиотеку HTTPX
 
 # Данные для входа в систему
 login_payload = {
+    "username": "username",
     "email": "user@example.com",
     "password": "string"
 }
 
 # Выполняем запрос на аутентификацию
-login_response = httpx.post("http://localhost:8000/api/v1/authentication/login", json=login_payload)
+login_response = httpx.post("https://reqres.in/api/", json=login_payload)
 login_response_data = login_response.json()
 
 # Выводим полученные токены
